@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   mongo:
+    container_name: "mongodb"
     image: mongo:6
     restart: always
     env_file:
@@ -9,6 +10,13 @@ services:
       - mongo_data:/data/db
     ports:
       - "27017:27017"
+    networks:
+      - mongo_go_net
 
 volumes:
   mongo_data:
+
+
+networks:
+  mongo_go_net:
+    driver: bridge

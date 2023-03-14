@@ -12,8 +12,7 @@ services:
       - "27017:27017"
     networks:
       - mongo_go_net
-    restart: always
-    
+
 volumes:
   mongo_data:
 
